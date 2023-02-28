@@ -9,13 +9,17 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@iconscout/react-unicons": "^1.1.6",
+    "@react-icons/all-files": "^4.1.0",
     "antd-mobile": "^5.28.1",
     "expo": "~48.0.4",
     "expo-status-bar": "~1.4.4",
     "react": "18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
     "react-native": "0.71.3",
-    "react-native-web": "~0.18.11"
+    "react-native-web": "~0.18.11",
+    "react-router-dom": "^6.8.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
