@@ -15,76 +15,10 @@ import Catalog from './src/screens/Catalog';
 import Cart from './src/screens/Cart';
 import Account from './src/screens/Account';
 
-const Bottom: FC = () => {
-  const history = useNavigate();
-  const location = useLocation();
-  const { pathname } = location;
-
-  const setRouteActive = (value: string) => {
-    history.apply(value);
-  };
-  const tabs = [
-    {
-      key: "/home",
-      title: "Главная",
-      icon: <SiBuymeacoffee />,
-    },
-    {
-      key: "/catalog",
-      title: "Каталог",
-      icon: <IoMdMenu />,
-    },
-    {
-      key: "/cart",
-      title: "Корзина",
-      icon: <RiShoppingBasketFill />,
-    },
-    {
-      key: "/account",
-      title: "Аккаунт",
-      icon: <RiAccountCircleFill />,
-    },
-  ];
-  return (
-    <TabBar activeKey={pathname} onChange={(value) => setRouteActive(value)}>
-      {tabs.map((item) => (
-        <TabBar.Item key={item.key} icon={item.icon} title={item.title} />
-      ))}
-    </TabBar>
-  );
-}
-
-export default () => {
+const App = () => {
   return(
-    <Routes>
-        <Route path="/home">
-          <HomeWidget/>
-        </Route>
-        <Route path="/catalog">
-        <CatalogWidget/>
-        </Route>
-        <Route path="/cart">
-          <CartWidget/>
-        </Route>
-        <Route path="/account">
-          <AccountWidget/>
-        </Route>
-    </Routes>
+    <Main/>
   )
 }
 
-function HomeWidget(){
-  return <Main/>
-}
-
-function CatalogWidget() {
-  return <Catalog/>
-}
-
-function CartWidget() {
-  return <Cart/>
-}
-
-function AccountWidget(){
-  return <Account/>
-}
+export default App;
