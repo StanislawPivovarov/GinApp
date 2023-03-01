@@ -7,7 +7,7 @@ import {Route, Routes, useNavigate, useLocation} from 'react-router-dom'
 const Main = () => {
     return(
         <ScrollView style={global.screen}>
-            {/* <Header name='Главная'/> */}
+            <Header name='Главная'/>
         </ScrollView>
     )
 }
