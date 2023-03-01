@@ -7,5 +7,8 @@ export const global = StyleSheet.create({
     },
     entryPoint: {
         width: '100%'
+    },
+    content: {
+        paddingHorizontal: 16
     }
 })
