@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo/webpack-config": "^18.0.1",
     "@iconscout/react-unicons": "^1.1.6",
     "@react-icons/all-files": "^4.1.0",
     "antd-mobile": "^5.28.1",
