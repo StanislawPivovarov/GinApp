@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 import { widget } from "./style";
 
 interface Widget{
@@ -9,9 +9,9 @@ interface Widget{
 const MainWidget = (props: Widget) => {
   return (
     <View style={widget.back}>
-      <View>
-        <p>Сумма скидки</p>
-        <p>{props.summ}%</p>
+      <View style={widget.inner}>
+        <Text style={widget.description}>Сумма скидки</Text>
+        <Text style={widget.summa}>{props.summ}%</Text>
       </View>
     </View>
   );

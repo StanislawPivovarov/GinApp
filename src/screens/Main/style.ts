@@ -20,5 +20,15 @@ export const MainStyle = StyleSheet.create({
     height: 150,
     borderRadius: 10,
   },
-  contents: {},
+  description: {
+    textAlign: "center",
+    fontSize: 16,
+    marginTop: 10,
+    marginBottom: 15
+  },
+
+  requestButton: {
+    backgroundColor: '#ECE3D2',
+    color: '#000'
+  }
 });

@@ -1,7 +1,7 @@
-import { View } from 'react-native'
+import { View, Text } from 'react-native'
 import React from 'react'
-import { Divider } from 'antd-mobile';
 import {head} from './styles'
+import { Divider } from '@rneui/base';
 
 interface HeadProps{
     name: string;
@@ -10,8 +10,7 @@ interface HeadProps{
 const Header = (props: HeadProps) => {
     return(
         <View style={head.header}>
-            <h2 style={head.text}>{props.name}</h2>
-            <Divider style={head.divider}/>
+            <Text style={head.text}>{props.name}</Text>
         </View>
     )
 }
