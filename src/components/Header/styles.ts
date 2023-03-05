@@ -2,12 +2,14 @@ import { StyleSheet } from "react-native";
 
 export const head = StyleSheet.create({
     header: {
-        marginHorizontal: '16px',
-        marginVertical: '10px',
+        marginLeft: 16,
+        marginRight: 16,
+        marginVertical: 10,
         marginBottom: 0
     },
     text: {
-        marginBottom: 0
+        marginBottom: 10,
+        fontSize: 20
     },
     divider: {
         color: '#4E4138',

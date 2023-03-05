@@ -5,10 +5,22 @@ export const widget = StyleSheet.create({
         backgroundColor: "#fff",
         borderRadius: 10,
         width: 120,
-        height: 'min-content',
-        shadowColor: "#171717",
-        shadowOffset: { width: 2, height: 2 },
-        shadowOpacity: 0.1,
-        shadowRadius: 2,
+        height: 'auto',
     },
+    inner: {
+        padding: 5,
+        flexDirection: 'column'
+    },
+    summa: {
+        margin: 0,
+        display: 'flex',
+        alignItems: 'center',
+        fontSize: 25
+    },
+    description: {
+        margin: 0,
+        display: 'flex',
+        alignContent: 'center',
+        marginBottom: 10
+    }
 })
