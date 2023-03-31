@@ -29,6 +29,5 @@ export const MainStyle = StyleSheet.create({
 
   requestButton: {
     backgroundColor: '#ECE3D2',
-    color: '#000'
   }
 });
