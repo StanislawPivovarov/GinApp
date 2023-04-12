@@ -1,6 +1,8 @@
-import React from "react";
+
 import { View, Text, Image } from "react-native";
 import { Icons } from "./style";
+//@ts-ignore
+import React from "react";
 interface IconProps {
   title: string;
   icon: string;

@@ -2,10 +2,12 @@ import { StyleSheet } from "react-native";
 
 export const Icons = StyleSheet.create({
     component: {
-        width: 150,
+        width: "100%",
         height: 150,
         borderRadius: 10,
+        marginBottom: 20,
         overflow: "hidden",
+        marginLeft: 8,
         backgroundColor: "#000"
       },
       cover: {
@@ -15,7 +17,8 @@ export const Icons = StyleSheet.create({
         position: 'absolute',
       },
       title: {
-        fontSize: 15,
+        fontSize: 30,
+        letterSpacing: 3,
         lineHeight: 20,
         zIndex: 10,
         width: '100%',
@@ -25,8 +28,10 @@ export const Icons = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         color: '#fff',
-        fontStyle: "italic",
-        textAlign: "center",
-        verticalAlign: "middle"
+        fontWeight: "bold",
+        textAlign: "left",
+        marginLeft: 20,
+        verticalAlign: "middle",
+        textTransform: "uppercase"
       }
 })

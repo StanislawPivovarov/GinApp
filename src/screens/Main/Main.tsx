@@ -1,3 +1,4 @@
+//@ts-ignore
 import React from "react";
 import { ScrollView, View, Text } from "react-native";
 import { global } from "../../../styles";
@@ -6,6 +7,7 @@ import { MainStyle } from "./style";
 import MainWidget from "../../components/MainWidget";
 import { Button } from "@ant-design/react-native";
 import CatalogIcon from "../../components/CatalogIcon";
+
 const Main = () => {
   return (
     <View style={global.screen}>
@@ -19,9 +21,6 @@ const Main = () => {
           <Text style={MainStyle.description}>
             Похоже, вы не вошли в аккаунт
           </Text>
-          <Button style={MainStyle.requestButton} type="ghost">
-            Войти / зарегистрироваться
-          </Button>
         </View>
       </ScrollView>
     </View>

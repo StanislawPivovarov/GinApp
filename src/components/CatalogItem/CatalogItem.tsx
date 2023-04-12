@@ -1,4 +1,5 @@
 import { View, Image, Text } from "react-native";
+//@ts-ignore
 import React from "react";
 import { Button } from "@ant-design/react-native";
 import { Component } from "./style";
@@ -28,6 +29,7 @@ const CatalogItem = (props: ItemProps) => {
       </View>
       <View>
         <Text style={Component.price}>{props.price}₽</Text>
+        //@ts-ignore
         <Button>В корзину</Button>
       </View>
     </View>
