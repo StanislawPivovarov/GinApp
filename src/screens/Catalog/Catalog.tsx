@@ -6,6 +6,7 @@ import { Col, Row, Grid } from "react-native-easy-grid";
 
 
 const Catalog = () => {
+    
     return(
         
         <ScrollView>
