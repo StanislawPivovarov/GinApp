@@ -31,9 +31,9 @@ const App = () => {
     <>
   
     <NavigationContainer>
-    <Stack.Navigator>
+    {/* <Stack.Navigator>
      <Stack.Screen name="BlackTea" component={BlackTea}/>
-    </Stack.Navigator>
+    </Stack.Navigator> */}
       <Tabs />
     </NavigationContainer>
     </>
