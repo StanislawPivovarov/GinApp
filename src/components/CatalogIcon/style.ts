@@ -2,12 +2,12 @@ import { StyleSheet } from "react-native";
 
 export const Icons = StyleSheet.create({
     component: {
-        width: "100%",
         height: 150,
         borderRadius: 10,
-        marginBottom: 20,
+        marginBottom: 4,
+        marginTop: 4,
         overflow: "hidden",
-        marginLeft: 8,
+        marginHorizontal: 8,
         backgroundColor: "#000"
       },
       cover: {
@@ -19,14 +19,12 @@ export const Icons = StyleSheet.create({
       title: {
         fontSize: 30,
         letterSpacing: 3,
-        lineHeight: 20,
         zIndex: 10,
         width: '100%',
         height: "100%",
         margin: 0,
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center',
         color: '#fff',
         fontWeight: "bold",
         textAlign: "left",

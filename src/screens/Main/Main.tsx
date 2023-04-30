@@ -4,9 +4,11 @@ import { ScrollView, View, Text } from "react-native";
 import { global } from "../../../styles";
 import { MainStyle } from "./style";
 
-import MainWidget from "../../components/MainWidget";
 import { Button } from "@ant-design/react-native";
 import CatalogIcon from "../../components/CatalogIcon";
+import DiscountAmount from "../../components/DiscountAmount";
+import MainCarousel from "../../components/MainCarousel";
+import Blogs from "../../components/Blogs";
 
 const Main = () => {
   return (
@@ -14,13 +16,15 @@ const Main = () => {
       <ScrollView style={global.content}>
         <View></View>
         <View style={MainStyle.header}>
-          <MainWidget summ={10} />
-          <MainWidget summ={10} />
+          <DiscountAmount summ={10} header="Ваша процент скидки" suffix="%" />
+          <DiscountAmount summ={2034} header="Вы купили у нас на" suffix="₽"/>
         </View>
         <View>
-          <Text style={MainStyle.description}>
+          {/* <Text style={MainStyle.description}>
             Похоже, вы не вошли в аккаунт
-          </Text>
+          </Text> */}
+          <MainCarousel/>
+          <Blogs/>
         </View>
       </ScrollView>
     </View>
