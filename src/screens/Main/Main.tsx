@@ -23,7 +23,6 @@ const Main = () => {
           {/* <Text style={MainStyle.description}>
             Похоже, вы не вошли в аккаунт
           </Text> */}
-          <MainCarousel/>
           <Blogs/>
         </View>
       </ScrollView>

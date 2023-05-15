@@ -101,3 +101,24 @@ export const TEA = gql`
     }
   }
 `;
+
+export const BLOGS = gql`
+  query {
+    blog(order_by: { id: desc }, limit: 6) {
+      name
+      image
+      id
+      filling
+      created
+    }
+  }
+`;
+
+export const CAROUSEL = gql`
+  query {
+    carousel(limit: 5, order_by: { id: desc }) {
+      id
+      image
+    }
+  }
+`;

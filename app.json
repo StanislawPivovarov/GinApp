@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "GinApp",
-    "slug": "GinApp",
+    "slug": "ginapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,16 +15,24 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.photovarov.dev.ginapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/appIcon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.photovarov.dev.ginapp"
     },
     "web": {
       "favicon": "./assets/appIcon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "0907dd95-f4c6-4bc2-90e1-15db98d8ffc1"
+      }
+    },
+    "owner": "photovarov.dev"
   }
 }
