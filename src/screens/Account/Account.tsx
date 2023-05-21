@@ -1,10 +1,14 @@
-import React from "react";
-import { View, Text, SafeAreaView } from "react-native";
-import { Accounts, SignUp } from "../Catalog/style";
+import React, { useEffect, useRef, useState } from "react";
+import { View, Text, SafeAreaView, TextInput, TextInputProps } from "react-native";
+import { Accounts, SignUp } from "./style";
 import { Ionicons } from "@expo/vector-icons";
-import { Button } from "@ant-design/react-native";
+import { Button, InputItem } from "@ant-design/react-native";
+import { auth } from "../../auth/firebase";
+import { signInWithPhoneNumber } from "firebase/auth";
 const Account = () => {
+
   const time = new Date().getHours();
+
   var good;
   if (time >= 7 && time < 12) {
     good = "Доброе утро ";
@@ -19,12 +23,25 @@ const Account = () => {
   console.log(time);
 
   const logged: Boolean = false;
-
   if (!logged) {
+
+
+  
+
     return (
       <View style={SignUp.wrapper}>
         <View style={SignUp.buttons}>
-          <Text>{good}</Text>
+          <Text style={SignUp.day}>{good}!</Text>
+          <Text style={SignUp.suggest}>
+            Похоже, что Вы не авторизировались! Самое время это сделать!
+          </Text>
+          <View style={{ width: "100%" }}>
+            <TextInput
+              placeholder="Ваш номер телефона"
+
+            />
+            <Button onPress={() => console.log("hi")}>Отправить</Button>
+          </View>
         </View>
       </View>
     );

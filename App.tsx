@@ -10,7 +10,9 @@ import Main from "./src/screens/Main";
 import Catalog from "./src/screens/Catalog";
 import Cart from "./src/screens/Cart";
 import ByCategory from "./src/screens/ByCategory";
+import ProductInfo from "./src/screens/ProductInfo";
 import Account from "./src/screens/Account";
+import BlogArticle from "./src/screens/BlogArticle"
 import { ApolloProvider } from "@apollo/client";
 import { byCategory } from "./src/screens/ByCategory/style";
 import { Text, View } from "react-native";
@@ -19,8 +21,19 @@ const Stack = createNativeStackNavigator();
 function CatalogStackNavigator() {
   return(
     <Stack.Navigator>
-    <Stack.Screen headless="true" name="Каталог" component={Catalog} />
-    <Stack.Screen name=" " component={ByCategory}/>
+    <Stack.Screen name="Меню" component={Catalog} />
+    <Stack.Screen name="Категория" component={ByCategory}/>
+    <Stack.Screen name="Item" component={ProductInfo}/>
+  </Stack.Navigator>
+  )
+}
+
+function MainStackNavigator() {
+  return(
+    <Stack.Navigator>
+    <Stack.Screen name="Привет!" component={Main}/>
+    <Stack.Screen name="Блоги" component={BlogArticle}/>
+
   </Stack.Navigator>
   )
 
@@ -34,9 +47,9 @@ function Tabs() {
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
-          if (route.name === "Главная") {
+          if (route.name === "Привет!") {
             iconName = focused ? "cafe-outline" : "cafe";
-          } else if (route.name === "Каталог") {
+          } else if (route.name === "Меню") {
             iconName = focused ? "grid-outline" : "grid";
           } else if (route.name === "Корзина") {
             iconName = focused ? "cart-outline" : "cart";
@@ -50,11 +63,11 @@ function Tabs() {
         headerShown: false
       })}
     >
-      <Tab.Screen name="Главная" component={Main} />
-      <Tab.Screen name="Каталог" component={CatalogStackNavigator} />
+      <Tab.Screen name="Привет!" component={MainStackNavigator} />
+      <Tab.Screen name="Меню" component={CatalogStackNavigator} />
       <Tab.Screen name="Корзина" component={Cart} />
       <Tab.Screen name="Аккаунт" component={Account} />
-      <Tab.Screen name="Тест" component={ByCategory} />
+      <Tab.Screen name="Тест" component={BlogArticle} />
     </Tab.Navigator>
   );
 }

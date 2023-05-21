@@ -56,6 +56,7 @@ export const Accounts = StyleSheet.create({
 
 export const SignUp = StyleSheet.create({
     wrapper: {
+        marginVertical: 20,
         alignContent: 'center',
     },
     buttons: {
@@ -65,4 +66,16 @@ export const SignUp = StyleSheet.create({
         marginTop: 20,
         alignItems: 'center'
     },
+
+    suggest: {
+        textAlign: 'center',
+        marginTop: 10,
+        fontSize: 18
+    },
+
+    day: {
+        fontSize: 20,
+        fontWeight: "bold",
+        textTransform: "uppercase"
+    }
 })

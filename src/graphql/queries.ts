@@ -122,3 +122,15 @@ export const CAROUSEL = gql`
     }
   }
 `;
+
+export const BANNER = gql`
+query {
+  carousel(where: {carouselCategory: {id: {_eq: 3}}}) {
+    id
+    image
+    carouselCategory {
+      id
+    }
+  }
+}
+`

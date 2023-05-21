@@ -5,12 +5,11 @@ export const global = StyleSheet.create({
         backgroundColor: '#F4F5F0',
         width: '100%',
         flex: 1,
-        paddingTop: Platform.OS === 'android' ? 25 : 0
     },
     entryPoint: {
         width: '100%'
     },
     content: {
-        paddingHorizontal: 16
+        
     }
 })

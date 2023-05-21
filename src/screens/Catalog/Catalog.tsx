@@ -40,9 +40,8 @@ const Catalog = ({ navigation }: any) => {
     >
       {data?.category.map((category: any) => (
         <TouchableOpacity
-        onPress={() => navigation.navigate(" ")}
+          onPress={() => navigation.navigate("Категория", {categoryId: category.id, categoryName: category.name, categoryImage: category.image, categoryDescription: category.description})}
           key={category.id}
-          // onPress={navigation.navigate("ByCategory")}
         >
           <CatalogIcon title={category?.name} icon={category?.image} />
         </TouchableOpacity>

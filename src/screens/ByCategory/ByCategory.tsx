@@ -3,10 +3,41 @@ import { View, Image, Text } from "react-native";
 import { ScrollView } from "react-native";
 import { byCategory } from "./style";
 import Product from "../../components/Product";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { gql, useQuery } from "@apollo/client";
 // import image from '../../assets/fff.jpg'
 
-const ByCategory = () => {
+const ByCategory = ({navigation, route}: any) => {
+  const {categoryId, categoryImage, categoryName, categoryDescription} = route.params;
+
+  const image = JSON.stringify(categoryImage).replace(/['"]+/g, '')
+  const name = JSON.stringify(categoryName).replace(/['"]+/g, '')
+  const category = JSON.stringify(categoryId).replace(/['"]+/g, '')
+  const desciption = JSON.stringify(categoryDescription).replace(/['"]+/g, '')
+
+const items = gql`
+query {
+  product(where: {product_category: {id: {_eq: ${category}}}}) {
+    category
+    description
+    id
+    image
+    name
+    price
+  }
+}
+`
+
+const {data, loading} = useQuery(items);
+
+console.log(data);
+if (loading) {
+  return(
+    <Text> loading</Text>
+  )
+}
+
   return (
     <ScrollView>
       <View style={byCategory.header}>
@@ -15,32 +46,26 @@ const ByCategory = () => {
             <Image
               style={byCategory.cover}
               source={{
-                uri: "https://img.freepik.com/premium-vector/pink-light-square-frame-pink-light-square-pink-light-square-banner_1189-2997.jpg",
+                uri: `${image}`,
               }}
             />
           </View>
           <View style={byCategory.textWrapper}>
-            <Text style={byCategory.headerText}>Чай эко</Text>
+            <Text style={byCategory.headerText}>{name}</Text>
             <Text style={byCategory.description}>
-              {" "}
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero
-              blanditiis fugit illo aliquam at quas distinctio voluptatibus quo
-              iusto aut reprehenderit nemo est harum recusandae pariatur
-              adipisci optio, incidunt consequuntur. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Quae eum quisquam eveniet mollitia.
-              Soluta optio quod magni illum. Cum quas repellat molestiae saepe,
-              nobis labore facilis rerum cupiditate ut unde?
+              {categoryDescription}
             </Text>
           </View>
         </View>
       </View>
-      <TouchableOpacity>
-        <Product />
-      </TouchableOpacity>
 
-      <Product />
-      <Product />
-      <Product />
+      {
+        data?.product.map((item: any) => (
+          <TouchableOpacity key={item.id} onPress={() => navigation.navigate("Item")}>
+          <Product name={item.name} description={item.description} price={item.price} image={item.image}/>
+          </TouchableOpacity>
+        ))
+      }
     </ScrollView>
   );
 };
