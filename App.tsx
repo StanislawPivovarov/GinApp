@@ -13,30 +13,44 @@ import ByCategory from "./src/screens/ByCategory";
 import ProductInfo from "./src/screens/ProductInfo";
 import Account from "./src/screens/Account";
 import BlogArticle from "./src/screens/BlogArticle"
+import ClientInfo from './src/screens/ClientInfo'
+import SignIn from './src/screens/SignIn'
 import { ApolloProvider } from "@apollo/client";
+import OrderHistory from './src/screens/OrderHistory'
 import { byCategory } from "./src/screens/ByCategory/style";
 import { Text, View } from "react-native";
 
 const Stack = createNativeStackNavigator();
 function CatalogStackNavigator() {
-  return(
+  return (
     <Stack.Navigator>
-    <Stack.Screen name="Меню" component={Catalog} />
-    <Stack.Screen name="Категория" component={ByCategory}/>
-    <Stack.Screen name="Item" component={ProductInfo}/>
-  </Stack.Navigator>
+      <Stack.Screen name="Меню" component={Catalog} />
+      <Stack.Screen name="Категория" component={ByCategory} />
+      <Stack.Screen name="Item" component={ProductInfo} />
+    </Stack.Navigator>
   )
 }
 
 function MainStackNavigator() {
-  return(
+  return (
     <Stack.Navigator>
-    <Stack.Screen name="Привет!" component={Main}/>
-    <Stack.Screen name="Блоги" component={BlogArticle}/>
+      <Stack.Screen name="Привет!" component={Main} />
+      <Stack.Screen name="Блоги" component={BlogArticle} />
 
-  </Stack.Navigator>
+    </Stack.Navigator>
   )
+}
 
+function AccountStackNavigatior() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Авторизация" component={Account} />
+      <Stack.Screen options={{ headerShown: false }} name="Страница аккаунта" component={SignIn} />
+      <Stack.Screen name="Информация" component={ClientInfo} />
+      <Stack.Screen name="История заказов" component={OrderHistory} />
+
+    </Stack.Navigator>
+  )
 }
 
 function Tabs() {
@@ -66,8 +80,8 @@ function Tabs() {
       <Tab.Screen name="Привет!" component={MainStackNavigator} />
       <Tab.Screen name="Меню" component={CatalogStackNavigator} />
       <Tab.Screen name="Корзина" component={Cart} />
-      <Tab.Screen name="Аккаунт" component={Account} />
-      <Tab.Screen name="Тест" component={BlogArticle} />
+      <Tab.Screen name="Аккаунт" component={AccountStackNavigatior} />
+      <Tab.Screen name="Тест" component={ClientInfo} />
     </Tab.Navigator>
   );
 }
@@ -90,7 +104,7 @@ const App = () => {
     <ApolloProvider client={client}>
       <NavigationContainer>
         {/* <StackNavigation/> */}
-        <Tabs  />
+        <Tabs />
       </NavigationContainer>
     </ApolloProvider>
   );
